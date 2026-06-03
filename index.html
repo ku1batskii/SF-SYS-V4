@@ -929,43 +929,6 @@
       line-height: 1.55;
       color: var(--muted);
     }
-
-    /* ============================================================
-       PACKAGES — three tiers + secondary modules (на бумаге)
-       ============================================================ */
-    .packages-tiers {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1fr);
-      gap: 0;
-      border: 1px solid var(--paper-line);
-      align-items: stretch;
-    }
-    .package-card {
-      padding: 40px 32px;
-      border-right: 1px solid var(--paper-line);
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      position: relative;
-      background: transparent;
-      transition: background 240ms ease;
-    }
-    .package-card:last-child { border-right: 0; }
-    .package-card:hover { background: rgba(229, 83, 43, 0.025); }
-    .package-card.featured {
-      background: var(--text-dark);
-      color: var(--paper);
-    }
-    .package-card.featured:hover { background: var(--text-dark); }
-    .package-card.featured::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--accent);
-    }
     .package-card-head {
       display: flex;
       justify-content: space-between;
@@ -983,15 +946,6 @@
       border: 1px solid var(--accent);
       border-radius: var(--radius);
     }
-    .package-card.featured .package-card-badge { color: var(--paper); border-color: var(--accent); background: var(--accent); }
-    .package-card h3 {
-      font-family: var(--font-display);
-      font-size: 28px;
-      line-height: 1.1;
-      letter-spacing: -0.025em;
-      font-weight: 400;
-    }
-    .package-card.featured h3 { color: var(--paper); }
     .package-card-price {
       display: flex;
       align-items: baseline;
@@ -1000,10 +954,6 @@
       border-top: 1px solid var(--paper-line);
       border-bottom: 1px solid var(--paper-line);
     }
-    .package-card.featured .package-card-price {
-      border-top-color: var(--line-strong);
-      border-bottom-color: var(--line-strong);
-    }
     .package-card-price strong {
       font-family: var(--font-display);
       font-size: 32px;
@@ -1011,15 +961,12 @@
       letter-spacing: -0.03em;
       color: var(--text-dark);
     }
-    .package-card.featured .package-card-price strong { color: var(--paper); }
     .package-card-price span { color: var(--muted-dark); font-size: 13px; }
-    .package-card.featured .package-card-price span { color: rgba(245, 243, 238, 0.6); }
     .package-card-best {
       font-size: 15px;
       line-height: 1.5;
       color: var(--muted-dark);
     }
-    .package-card.featured .package-card-best { color: rgba(245, 243, 238, 0.78); }
     .package-card-pain {
       font-size: 13px;
       line-height: 1.5;
@@ -1027,7 +974,6 @@
       padding-left: 16px;
       border-left: 2px solid var(--accent);
     }
-    .package-card.featured .package-card-pain { color: var(--paper); }
     .package-card-list {
       display: flex;
       flex-wrap: wrap;
@@ -1045,53 +991,6 @@
       border: 1px solid var(--paper-line);
       border-radius: var(--radius);
     }
-    .package-card.featured .package-card-list span {
-      color: var(--paper);
-      border-color: var(--line-strong);
-    }
-    .package-card .btn { margin-top: auto; }
-
-    .packages-secondary-head {
-      margin: 80px 0 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 32px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--paper-line);
-    }
-    .packages-secondary-head h3 {
-      font-family: var(--font-display);
-      font-size: 28px;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      font-weight: 400;
-      color: var(--text-dark);
-    }
-    .packages-secondary-head p {
-      max-width: 480px;
-      font-size: 14px;
-      line-height: 1.55;
-      color: var(--muted-dark);
-    }
-    .packages-secondary {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      border-top: 1px solid var(--paper-line);
-    }
-    .package-mini {
-      padding: 32px 24px 32px 0;
-      border-bottom: 1px solid var(--paper-line);
-      border-right: 1px solid var(--paper-line);
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .package-mini:nth-child(3n) { border-right: 0; }
-    .package-mini:nth-child(n+4) { padding-top: 32px; }
-    .package-mini:nth-child(n) { padding-left: 24px; }
-    .package-mini:nth-child(3n+1) { padding-left: 0; }
     .package-mini-head {
       display: flex;
       justify-content: space-between;
@@ -1104,23 +1003,6 @@
       font-weight: 500;
       letter-spacing: -0.01em;
       color: var(--text-dark);
-    }
-    .package-mini h4 {
-      font-family: var(--font-display);
-      font-size: 19px;
-      line-height: 1.2;
-      letter-spacing: -0.015em;
-      font-weight: 500;
-      color: var(--text-dark);
-    }
-    .package-mini p {
-      font-size: 13.5px;
-      line-height: 1.5;
-      color: var(--muted-dark);
-    }
-    .package-mini .link-paper {
-      margin-top: auto;
-      font-size: 13px;
     }
 
     /* ============================================================
@@ -1663,7 +1545,8 @@
       .audit-faq details:nth-child(odd) { border-right: 0; padding-right: 0; }
       .audit-faq details:nth-child(even) { padding-left: 0; }
       .package-mini { padding: 24px 0; border-right: 0; }
-      .adv-cell { padding: 32px 0; border-right: 0; }
+      .advantages-grid { border-left: 0; border-right: 0; }
+      .adv-cell { padding: 32px 20px; border-right: 0; }
       .adv-cell:not(:last-child) { border-bottom: 1px solid var(--line); }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
       .nav-links { display: none; }
@@ -1718,27 +1601,6 @@
   padding: 24px 16px;
   display: flex;
   flex-direction: column;
-}
-.cab-sidebar-brand {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  padding: 6px 14px 22px;
-  margin-bottom: 8px;
-  border-bottom: 1px solid var(--line);
-}
-.cab-sidebar-brand .brand-name {
-  font-family: var(--font-display);
-  font-size: 17px;
-  font-weight: 500;
-  color: var(--text);
-}
-.cab-sidebar-brand .brand-mark {
-  font-family: var(--font-mono);
-  font-size: 9.5px;
-  letter-spacing: 0.18em;
-  color: var(--accent);
-  text-transform: uppercase;
 }
 .cab-sidebar-group {
   padding: 14px 14px 6px;
@@ -2006,31 +1868,6 @@
 /* SECTIONS — switching */
 .cab-section { display: none; }
 .cab-section.active { display: block; animation: fade 280ms var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)); }
-
-/* PAGE HEAD */
-.cab-page-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 24px;
-  padding-bottom: 28px;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 32px;
-}
-.cab-page-head h2 {
-  margin-top: 14px;
-  font-family: var(--font-display);
-  font-size: clamp(32px, 4vw, 48px);
-  line-height: 1;
-  letter-spacing: -0.035em;
-  font-weight: 300;
-  color: var(--text);
-}
-.cab-page-head h2 em {
-  font-style: normal;
-  font-weight: 400;
-  color: var(--muted);
-}
 .cab-page-actions {
   display: flex;
   gap: 8px;
@@ -2970,14 +2807,6 @@
   border: 1px solid rgba(245, 158, 11, 0.32);
   color: #f59e0b;
 }
-.result-packages {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  margin: 20px 0;
-}
 .result-package {
   background: var(--ink);
   padding: 28px 24px;
@@ -3023,79 +2852,9 @@
   flex-wrap: wrap;
 }
 
-/* ============================================================
-   CHECKOUT VIEW
-   ============================================================ */
-.checkout-hero {
-  padding: 56px 0 32px;
-  background: var(--ink);
-  color: var(--text);
-  border-bottom: 1px solid var(--line);
-}
-.checkout-hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(36px, 5vw, 56px);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  font-weight: 300;
-}
-.checkout-shell {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 380px;
-  gap: 32px;
-  padding: 40px 0 80px;
-  align-items: start;
-}
-.checkout-main { min-width: 0; }
-.checkout-progress {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  margin-bottom: 28px;
-}
-.checkout-step-pill {
-  background: var(--ink);
-  padding: 14px 18px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.checkout-step-pill.active { background: var(--ink-2); }
-.checkout-step-pill.done .meta { color: #4ade80; }
-.checkout-step-pill.done span:last-child { color: #4ade80; }
-.checkout-step-pill .meta {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  color: var(--muted);
-}
-.checkout-step-pill.active .meta { color: var(--accent); }
-.checkout-step-pill span:last-child {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--muted);
-}
-.checkout-step-pill.active span:last-child { color: var(--text); }
-
 /* THE KEY FIX — hide non-active steps */
 .checkout-step { display: none; }
 .checkout-step.active { display: block; }
-.checkout-step-title {
-  font-family: var(--font-display);
-  font-size: clamp(24px, 3vw, 32px);
-  font-weight: 400;
-  letter-spacing: -0.025em;
-  margin-bottom: 8px;
-  color: var(--text);
-}
-.checkout-step-sub {
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--muted);
-  margin-bottom: 24px;
-}
 .checkout-step.is-once [data-checkout-once-hide] { display: none !important; }
 
 .form-field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
@@ -3120,12 +2879,6 @@
 }
 .form-field input:focus,
 .form-field textarea:focus { outline: 0; border-color: var(--accent); }
-
-.checkout-seg {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
 .checkout-seg-opt,
 .checkout-seg-opt {
   position: relative;
@@ -3180,22 +2933,6 @@
   flex-direction: column;
   gap: 8px;
 }
-.checkout-addon {
-  display: grid;
-  grid-template-columns: 20px 1fr auto;
-  gap: 14px;
-  align-items: center;
-  padding: 14px 16px;
-  border: 1px solid var(--line-strong);
-  cursor: pointer;
-  transition: all 200ms ease;
-}
-.checkout-addon:hover { border-color: var(--text); }
-.checkout-addon.is-checked {
-  border-color: var(--accent);
-  background: rgba(229, 83, 43, 0.06);
-}
-.checkout-addon input { accent-color: var(--accent); }
 .checkout-addon-body strong {
   display: block;
   font-size: 14px;
@@ -3216,25 +2953,6 @@
   color: var(--accent);
   white-space: nowrap;
 }
-
-.checkout-actions {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 28px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
-}
-
-/* SUCCESS */
-.checkout-success {
-  text-align: center;
-  padding: 40px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-}
 .checkout-success-meta {
   display: flex;
   flex-direction: column;
@@ -3253,26 +2971,11 @@
   font-style: normal;
   color: var(--accent);
 }
-.checkout-success p {
-  max-width: 520px;
-  font-size: 14.5px;
-  line-height: 1.6;
-  color: var(--muted);
-}
 .checkout-success-actions {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-/* SUMMARY (sticky right panel) */
-.checkout-summary {
-  position: sticky;
-  top: 92px;
-  padding: 28px;
-  background: var(--ink-2);
-  border: 1px solid var(--line);
 }
 .checkout-summary-head {
   padding-bottom: 18px;
@@ -3374,8 +3077,6 @@
   .cfg-head { grid-template-columns: 1fr; gap: 14px; }
   .cfg-estimate { text-align: left; }
   .checkout-step { padding: 0; }
-  .checkout-actions { flex-direction: column; }
-  .checkout-actions .btn { width: 100%; justify-content: center; }
 }
 
   
@@ -3699,9 +3400,6 @@
     .co-title { font-family:var(--font-display); font-weight:300; font-size:clamp(30px,4vw,52px); letter-spacing:-0.03em; line-height:1.04; margin-top:14px; color:var(--text-dark); }
     .co-step { font-family:var(--font-mono,monospace); font-size:.72rem; letter-spacing:.1em; color:var(--accent); border:1px solid var(--accent-line); border-radius:3px; padding:5px 11px; white-space:nowrap; }
     .co-lead { color:var(--muted-dark); max-width:620px; line-height:1.6; margin:18px 0 40px; }
-
-    .checkout-shell { display:grid; grid-template-columns:1.5fr 1fr; gap:48px; align-items:start; }
-    .checkout-main { min-width:0; }
     .checkout-step { display:none; }
     .checkout-step.active { display:block; }
 
@@ -3767,7 +3465,6 @@
     .co-success-actions { display:flex; gap:12px; margin-top:28px; flex-wrap:wrap; }
 
     @media (max-width:880px){
-      .checkout-shell { grid-template-columns:1fr; gap:32px; }
       .co-summary { position:relative; top:auto; }
       .co-payer { grid-template-columns:1fr; }
       .co-pay { grid-template-columns:1fr; }
@@ -4117,12 +3814,12 @@
               <p>Мы не обязательно заменяем вашего специалиста. Часто мы дополняем его: фиксируем карту инфраструктуры, регламенты, доступы, резервное копирование и зоны ответственности. Так IT перестаёт держаться только на одном человеке.</p>
             </details>
             <details>
-              <summary><span class="faq-num">02</span><span>Можно начать не с максимального пакета?</span><span class="faq-toggle">+</span></summary>
-              <p>Да. Диагностика показывает, с какого пакета безопаснее начать. Часто стартуют с базового контроля или отдельного контура, а затем расширяют ответственность по мере роста инфраструктуры.</p>
+              <summary><span class="faq-num">02</span><span>Можно начать не со всего контура сразу?</span><span class="faq-toggle">+</span></summary>
+              <p>Да. Можно начать с отдельного решения — сервера, 1С или телефонии — а затем расширять зону ответственности по мере роста инфраструктуры. Консультация подскажет, с чего безопаснее начать.</p>
             </details>
             <details>
               <summary><span class="faq-num">03</span><span>Почему нельзя просто заказать одну услугу?</span><span class="faq-toggle">+</span></summary>
-              <p>Разовая услуга решает точечную задачу, но не создаёт управляемость. SF-SYS работает пакетами, потому что бизнесу важна не отдельная настройка, а понятная зона ответственности: кто отвечает, где документы, как реагируем и что контролируем дальше.</p>
+              <p>Разовая услуга решает точечную задачу, но не создаёт управляемость. SF-SYS берёт инфраструктуру под единую ответственность, потому что бизнесу важна не отдельная настройка, а понятная зона ответственности: кто отвечает, где документы, как реагируем и что контролируем дальше.</p>
             </details>
             <details>
               <summary><span class="faq-num">04</span><span>Безопасно ли передавать доступы?</span><span class="faq-toggle">+</span></summary>
@@ -4130,7 +3827,7 @@
             </details>
             <details>
               <summary><span class="faq-num">05</span><span>Как фиксируются сроки реакции и ответственность?</span><span class="faq-toggle">+</span></summary>
-              <p>Формат реакции, приоритеты, зона ответственности и порядок эскалации фиксируются в договоре и регламентах обслуживания. Конкретные сроки зависят от выбранного пакета и согласуются до старта работ.</p>
+              <p>Формат реакции, приоритеты, зона ответственности и порядок эскалации фиксируются в договоре и регламентах обслуживания. Конкретные сроки зависят от состава услуг и согласуются до старта работ.</p>
             </details>
             <details>
               <summary><span class="faq-num">06</span><span>Что будет, если мы меняем подрядчика?</span><span class="faq-toggle">+</span></summary>
@@ -4138,7 +3835,7 @@
             </details>
             <details>
               <summary><span class="faq-num">07</span><span>Что происходит после заявки?</span><span class="faq-toggle">+</span></summary>
-              <p>Мы уточняем инфраструктуру, определяем подходящий пакет, согласуем зону ответственности и готовим предварительную смету. Работы начинаются только после согласования состава, сроков и условий.</p>
+              <p>Мы уточняем инфраструктуру, определяем подходящий состав услуг, согласуем зону ответственности и готовим предварительную смету. Работы начинаются только после согласования состава, сроков и условий.</p>
             </details>
           </div>
         </div>
@@ -4251,7 +3948,7 @@
               <h2>Получить <em>предварительный расчёт.</em></h2>
             </div>
             <p class="section-lead">
-              Опишите задачу — уточним инфраструктуру, предложим подходящий пакет и подготовим предварительную смету. Оплата и запуск — только после согласования.
+              Опишите задачу — уточним инфраструктуру, предложим подходящее решение и подготовим предварительную смету. Оплата и запуск — только после согласования.
             </p>
           </header>
 
@@ -4273,7 +3970,7 @@
                 <span>Согласен на обработку персональных данных и условия оферты обслуживания.</span>
               </label>
               <button class="btn btn-primary" style="margin-top: 24px;" type="submit">Получить расчёт</button>
-              <p class="form-result" id="formResult">Финальная стоимость формируется после короткого обследования. Мы не начинаем работы без согласования пакета, сроков и зоны ответственности.</p>
+              <p class="form-result" id="formResult">Финальная стоимость формируется после короткого обследования. Мы не начинаем работы без согласования состава, сроков и зоны ответственности.</p>
             </form>
 
             <aside class="contact-aside">
@@ -4281,7 +3978,7 @@
                 <strong>Что будет после заявки</strong>
                 <ol>
                   <li>Уточним текущую инфраструктуру и ответственных.</li>
-                  <li>Подтвердим подходящий пакет или предложим корректировку.</li>
+                  <li>Подтвердим подходящий состав услуг или предложим корректировку.</li>
                   <li>Подготовим предварительную смету и список первых действий.</li>
                 </ol>
               </div>
@@ -6638,7 +6335,7 @@
         ? ('Пакетом дешевле на '+fmt(full-pack)+' / мес (−'+Math.round(rate*100)+'%)')
         : 'Добавите ещё услугу — пакетом выйдет дешевле';
       var heavy = selected.some(function(id){ return CATALOG[id] && CATALOG[id].heavy; });
-      if(g('consultCta')) g('consultCta').textContent = heavy ? 'Обсудить пакет со специалистом' : 'Оставить заявку';
+      if(g('consultCta')) g('consultCta').textContent = heavy ? 'Обсудить решение со специалистом' : 'Оставить заявку';
       sum.hidden = false;
     }
     function refreshCards(){
@@ -6750,7 +6447,7 @@
       var interested = priced || detectInterest(t);
       if(hit.length && interested){
         reply = 'Тогда смотрите: ' + hit.map(function(id){ return CATALOG[id].name; }).join(', ')
-          + '. Цены и итог пакетом — снизу, можно сразу оставить заявку. Если что-то лишнее — уберите карточку.';
+          + '. Цены и итог комплектом — снизу, можно сразу оставить заявку. Если что-то лишнее — уберите карточку.';
       } else if(hit.length){
         /* heard a need — reflect it, offer the server for ANY software, but don't push price */
         var soft = /табл|гугл|google|sheets|excel|эксель|crm|црм|склад|докумен/.test(t);
@@ -6814,7 +6511,7 @@
       var vb = e.target.closest('[data-consult-voice]');
       if(vb){ voiceOn=!voiceOn; vb.setAttribute('aria-pressed', voiceOn); vb.classList.toggle('on', voiceOn); if(!voiceOn && synth) try{ synth.cancel(); }catch(e){} return; }
       if(e.target.closest('[data-consult-cta]')){ e.preventDefault();
-        addMsg('agent','Чтобы зафиксировать заявку, оставьте телефон или email — подтвержу детали по пакету. (Отправка подключается на бэкенде через /api/lead.)'); return; }
+        addMsg('agent','Чтобы зафиксировать заявку, оставьте телефон или email — подтвержу детали по составу услуг. (Отправка подключается на бэкенде через /api/lead.)'); return; }
     });
     document.addEventListener('keydown', function(e){
       if(e.key === 'Enter' && e.target && e.target.id === 'consultText'){ e.preventDefault(); submit(); return; }
